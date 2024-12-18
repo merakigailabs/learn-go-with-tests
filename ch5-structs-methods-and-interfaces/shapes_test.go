@@ -9,6 +9,13 @@ func TestPerimeter(t *testing.T) {
 	assertFloatEqual(t, got, want)
 }
 
+func TestArea(t *testing.T) {
+	got := Area(10.0, 10.0)
+	want := 100.00
+
+	assertFloatEqual(t, got, want)
+}
+
 func assertFloatEqual(t testing.TB, got, want float64) {
 	t.Helper()
 
