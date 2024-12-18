@@ -16,3 +16,7 @@ go: cannot find main module, but found .git/config in /Users/merakigai/Desktop/G
         cd .. && go mod init
 
 > go mod init example.com/hello
+
+
+> go doc fmt
+Will give use the documentation for the fmt package.
