@@ -41,6 +41,6 @@ func assertCorrectMessage(t testing.TB, got, want string) {
 	// This is needed to tell the test suite that this method is a helper.
 	t.Helper()
 	if got != want {
-		t.Errorf("git %q want %q", got, want)
+		t.Errorf("got %q want %q", got, want)
 	}
 }
