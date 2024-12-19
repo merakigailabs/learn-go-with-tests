@@ -5,6 +5,8 @@ import (
 	"testing"
 )
 
+const float64EqualityThreshold = 1e-9
+
 func TestPerimeter(t *testing.T) {
 
 	t.Run("rectangles", func(t *testing.T) {
@@ -26,12 +28,26 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
+
+	checkArea := func(t testing.TB, shape Shape, want float64) {
+		t.Helper()
+		got := shape.Area()
+		if got != want {
+			t.Errorf("got %g want %g", got, want)
+		}
+	}
+
+	checkAreaNearlyEqual := func(t testing.TB, shape Shape, want float64) {
+		t.Helper()
+		got := shape.Area()
+		if math.Abs(got-want) <= float64EqualityThreshold {
+			t.Errorf("got %.2f want %.2f", got, want)
+		}
+	}
+
 	t.Run("rectangles", func(t *testing.T) {
 		rectangle := Rectangle{10.0, 10.0}
-		got := rectangle.Area()
-		want := 100.00
-
-		assertFloatEqual(t, got, want)
+		checkArea(t, rectangle, 100.00)
 	})
 
 	t.Run("circles", func(t *testing.T) {
@@ -39,6 +55,7 @@ func TestArea(t *testing.T) {
 		got := circle.Area()
 		want := 314.16
 
+		checkAreaNearlyEqual(t, circle, 100.00)
 		assertFloatAlmostEqual(t, got, want)
 	})
 
@@ -51,8 +68,6 @@ func assertFloatEqual(t testing.TB, got, want float64) {
 		t.Errorf("got %.2f want %.2f", got, want)
 	}
 }
-
-const float64EqualityThreshold = 1e-9
 
 func assertFloatAlmostEqual(t testing.TB, got, want float64) {
 	t.Helper()
