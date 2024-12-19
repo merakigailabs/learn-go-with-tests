@@ -12,6 +12,10 @@ func (w *Wallet) Deposit(amount Bitcoin) {
 	w.balance += amount
 }
 
+func (w *Wallet) Widthraw(amount Bitcoin) {
+	w.balance -= amount
+}
+
 func (w *Wallet) Balance() Bitcoin {
 	return w.balance
 }
