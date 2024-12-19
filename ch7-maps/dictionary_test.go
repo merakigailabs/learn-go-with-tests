@@ -33,7 +33,6 @@ func TestAdd(t *testing.T) {
 	dictionary.Add(word, definition)
 
 	assertDefinition(t, dictionary, word, definition)
-
 }
 
 func assertDefinition(t testing.TB, dictionary Dictionary, word, definition string) {
