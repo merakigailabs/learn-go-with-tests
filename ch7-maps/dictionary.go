@@ -15,6 +15,8 @@ func (d Dictionary) Search(key string) (string, error) {
 	return definition, nil
 }
 
+// An interesting property of maps is
+// that you can modify them without passing as an address to it
 func (d Dictionary) Add(word, definition string) {
 	d[word] = definition
 }
