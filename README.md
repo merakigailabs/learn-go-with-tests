@@ -9,7 +9,7 @@
 [x] Array and slices
 [x] Struct, methods & interfaces
 [x] Pointers & errors
-[] Maps (todo: 19 dec 2024)
+[x] Maps
 [] Dependency Injection (todo: 20 dec 2024)
 [] Mocking (todo: 20 dec 2024)
 [] Concurrency (todo: 20 dec 2024)
