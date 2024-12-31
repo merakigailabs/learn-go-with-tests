@@ -11,7 +11,7 @@
 [x] Pointers & errors
 [x] Maps
 [x] Dependency Injection
-[] Mocking (todo: 20 dec 2024)
+[x] Mocking
 [] Concurrency (todo: 20 dec 2024)
 [] Select (todo: 21 dec 2024)
 [] Reflection (todo: 21 dec 2024)
